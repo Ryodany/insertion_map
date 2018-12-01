@@ -2,9 +2,7 @@
 
 #include <assert.h>
 #include <unordered_map>
-#include <set>
 #include <iterator>
-#include <memory>
 
 template <typename K, typename V>
 class insertion_map
