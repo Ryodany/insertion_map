@@ -145,7 +145,7 @@ private:
 	bool insertion(const K &key, const V &value)
 	{
 		m_keyMap.insert(std::make_pair(key, m_size));
-		std::pair<InternalMap::iterator, bool> ret = m_map.insert(std::make_pair(m_size, std::make_pair(key, value)));
+		std::pair<typename InternalMap::iterator, bool> ret = m_map.insert(std::make_pair(m_size, std::make_pair(key, value)));
 		m_size++;
 
 		manageAllocation(ret);
