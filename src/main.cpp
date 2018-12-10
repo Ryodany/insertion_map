@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 
 #include "insertion_map.h"
 
@@ -13,6 +14,14 @@ int main()
 	stringDoubleMap.insert(std::make_pair("l", 4));
 	stringDoubleMap.insert(std::make_pair("h", 4));
 	stringDoubleMap.insert(std::make_pair("b", 4));
+
+	std::srand((unsigned int)std::time(nullptr)); // use current time as seed for random generator
+	for (uint32_t testNum = 0; testNum < 50000000; testNum++)
+	{
+		if (testNum % 1000000 == 0)
+			std::cout << testNum << " - ";
+		stringDoubleMap.insert(std::make_pair(std::to_string(testNum), (uint32_t)std::rand()));
+	}
 
 	stringDoubleMap.insert("k", 11);
 	stringDoubleMap.insert("b", 33);
