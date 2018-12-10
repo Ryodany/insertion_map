@@ -2,6 +2,7 @@
 
 #include <assert.h>
 #include <unordered_map>
+#include <map>
 #include <iterator>
 
 template <typename K, typename V>
@@ -10,7 +11,7 @@ class insertion_map
 private:
 	using Pair = std::pair<K, V>;
 
-	using InternalMap = std::unordered_map<size_t, Pair>;
+	using InternalMap = std::map<size_t, Pair>;
 	using KeyMap = std::unordered_map<K, size_t>;
 
 	size_t m_size;
@@ -134,7 +135,7 @@ private:
 
 			assert(m_size == m_map.size());
 			size_t count = 0;
-			typename std::unordered_map<size_t, Pair>::iterator it;
+			typename std::map<size_t, Pair>::iterator it;
 			for (it = m_map.begin(); count < m_map.size(); it++, count++)
 				*(m_data + count) = it->second;
 		}
