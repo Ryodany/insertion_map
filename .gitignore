@@ -39,7 +39,6 @@ conan/
 *.db
 *.log
 *.ilk
-*.ilk
 *.pdb
 *.exp
 *.iobj
