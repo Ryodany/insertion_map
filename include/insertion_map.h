@@ -114,8 +114,8 @@ public:
 			
 	}
 
-	iterator begin() { return iterator(m_data); }
-	iterator end() { return iterator(m_data + m_size); }
+	iterator begin() const { return iterator(m_data); }
+	iterator end() const { return iterator(m_data + m_size); }
 
 	bool empty() const
 	{
